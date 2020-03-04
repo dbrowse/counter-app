@@ -3,15 +3,20 @@ import React, { Component } from "react";
 class Counter extends Component {
 	//special property
 	state = {
-		count: 0
+		count: 1
 	};
 	render() {
 		return (
 			<div>
-				<span>{this.state.count}</span>
+				<span>{this.formatCount()}</span>
 				<button>Increment</button>
 			</div>
 		);
+	}
+
+	formatCount() {
+		const { count } = this.state;
+		return count === 0 ? "Zero" : count;
 	}
 }
 
